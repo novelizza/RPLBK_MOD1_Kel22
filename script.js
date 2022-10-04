@@ -19,3 +19,48 @@ var kananLine = document.getElementById("line");
 var kananEmail = document.getElementById("email");
 var kananHobi = document.getElementById("hobi");
 var kananTgl = document.getElementById("tgl");
+
+const findData = (e) => {
+    const newData = data.filter(mahasiswa => mahasiswa.nim.toString() === e.value);
+  
+    newData.length !== 0 ? namaLengkap.innerHTML = newData[0].nama_lengkap : namaLengkap.innerHTML = (e.value === '' ? '' : 'Data Tidak Ditemukan');
+
+    if (newData.length !== 0 && e.value !== '') {
+      namaKiri.innerHTML = 'Nama Lengkap';
+      panggilanKiri.innerHTML = 'Nama Panggilan';
+      nimKiri.innerHTML = 'NIM';
+      tlpKiri.innerHTML = 'Nomor Tlp';
+      lineKiri.innerHTML = 'Id Line';
+      emailKiri.innerHTML = 'Email';
+      hobiKiri.innerHTML = 'Hobi';
+      tglKiri.innerHTML = 'Tanggal Lahir';
+  
+      kananNama.innerHTML = ': ' + newData[0].nama_lengkap;
+      kananPanggilan.innerHTML = ': ' + newData[0].nama_panggilan;
+      kananNim.innerHTML = ': ' + newData[0].nim;
+      kananTlp.innerHTML = ': ' + newData[0].nomor_telepon;
+      kananLine.innerHTML = ': ' + newData[0].id_line;
+      kananEmail.innerHTML = ': ' + newData[0].email;
+      kananHobi.innerHTML = ': ' + newData[0].hobi;
+      kananTgl.innerHTML = ': ' + newData[0].tanggal_lahir;
+    } else {
+      namaKiri.innerHTML = '';
+      panggilanKiri.innerHTML = '';
+      nimKiri.innerHTML = '';
+      tlpKiri.innerHTML = '';
+      lineKiri.innerHTML = '';
+      emailKiri.innerHTML = '';
+      hobiKiri.innerHTML = '';
+      tglKiri.innerHTML = '';
+      lineKiri.innerHTML = '';
+  
+      kananNama.innerHTML = '';
+      kananPanggilan.innerHTML = '';
+      kananNim.innerHTML = '';
+      kananTlp.innerHTML = '';
+      kananLine.innerHTML = '';
+      kananEmail.innerHTML = '';
+      kananHobi.innerHTML = '';
+      kananTgl.innerHTML = '';
+    }
+  }
